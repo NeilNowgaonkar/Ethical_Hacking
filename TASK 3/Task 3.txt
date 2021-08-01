@@ -1,0 +1,31 @@
+Title 	  : Cross Script Scripting
+Domain	  : http://testasp.vulnweb.com/
+Subdomain : http://testasp.vulnweb.com/Search.asp
+Threat	  : Critical
+
+Vulnerability Description:-
+According to OWASP, Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it.
+
+An attacker can use XSS to send a malicious script to an unsuspecting user. The end user’s browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by the browser and used with that site. These scripts can even rewrite the content of the HTML page.
+
+Steps to reproduce:-
+Step 1: Visit http://testasp.vulnweb.com/
+Step 2: On the top menu you will find a search option.
+Step 3: Click on it and you will be prompted with the Search box.
+Step 4: You can intercept the request in Burp Suite
+Step 5: Now you can find different payloads for XSS. 
+Step 6: Send the request to the intruder and paste all the payloads.
+Step 7: We notice that script payload can work
+Step 8: Search for "<script>alert(1)</script>"
+Step 9: We see alert message is promted
+
+Impact:-
+XSS can have huge implications for a web application and its users. User accounts can be hijacked, credentials could be stolen, sensitive data could be exfiltrated, and lastly, access to your client computers can be obtained by man-in-the-middle attacks. This can be very critical and this threat should be eliminated as soon as possible.
+
+Mitigation:-
+Recommended remedy is that the users input is sanitized by removing special characters <,>,',",&,/ and JavaScript onEvent actions. Also, if special characters are required in the affected parameters, output encoding should be used to replace special characters with their HTML equivalent.
+
+POC including screenshot/ screenrecording is included in the report which is attached below.
+
+Image_1
+Video_1
