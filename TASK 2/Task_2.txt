@@ -1,0 +1,24 @@
+3 critical vulnerabilities:-
+1.) Out-of-date Version (OpenSSL)
+2.) Out-of-date Version (Apache)
+3.) Out-of-date Version (Tomcat)
+
+Report for Out-of-date Version (OpenSSL):-
+
+URL :
+Identified Version	: 0.9.8e
+Latest Version		: 1.1.1k
+
+Operating System 	: Kali Linux
+Tools			: Netsparker
+
+Summary:-
+Zero Bank's main website hhttps://zero.webappsecurity.com/  has an endpoint that is vulnerable as it has Out-of-date Version (OpenSSL) version 0.9.8e. As this is a old version of OpenSSL it is a critical threat to the website as an black hat attacker might take advantage of this. Also support for 0.9.8e has ended in 2006.
+
+Impact:-
+1.) A flaw in DTLS support - An attacker could create a malicious client or server that could trigger a heap overflow.
+
+2.) A flaw was found in the SSL_get_shared_ciphers() utility function- An attacker could send a list of ciphers to an application that used this function and overrun a buffer with a single byte. Few applications make use of this vulnerable function and generally it is used only when applications are compiled for debugging
+
+Remedy:-
+Please upgrade your installation of OpenSSL to the latest stable version i.e. 1.1.1k
